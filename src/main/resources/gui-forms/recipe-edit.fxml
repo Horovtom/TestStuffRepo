@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.Line?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="276.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/8.0.112-ea"
+      fx:controller="com.cvut.fel.horovtom.presentation.RecipeEditController">
+    <children>
+        <TabPane maxHeight="-Infinity" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab closable="false" text="General">
+                    <content>
+                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                              prefHeight="176.0" prefWidth="455.0">
+                            <children>
+                                <Label layoutX="20.0" layoutY="15.0" text="Name:">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="txtName" layoutX="129.0" layoutY="15.0" prefHeight="27.0"
+                                           prefWidth="320.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </TextField>
+                                <Label layoutX="20.0" layoutY="55.0" text="How many people:">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="txtPeopleAmount" layoutX="129.0" layoutY="55.0" prefHeight="27.0"
+                                           prefWidth="320.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </TextField>
+                                <Label layoutX="20.0" layoutY="95.0" text="Difficulty:">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                </Label>
+                                <ChoiceBox fx:id="chbDifficulty" layoutX="129.0" layoutY="96.0" prefHeight="25.0"
+                                           prefWidth="320.0"/>
+                                <Button fx:id="btnAddDiff" layoutX="129.0" layoutY="136.0" mnemonicParsing="false"
+                                        onAction="#btnAddDiffPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Add difficulty"/>
+                                <Button fx:id="btnEditDiff" layoutX="239.0" layoutY="136.0" mnemonicParsing="false"
+                                        onAction="#btnEditDiffPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Edit difficulty"/>
+                                <Button fx:id="btnDelDiff" layoutX="349.0" layoutY="136.0" mnemonicParsing="false"
+                                        onAction="#btnDelDiffPressed" prefWidth="100.0" text="Del difficulty"/>
+                            </children>
+                        </Pane>
+                    </content>
+                </Tab>
+                <Tab text="Food">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="149.0" prefWidth="474.0">
+                            <children>
+                                <ChoiceBox fx:id="chbFood" layoutX="20.0" layoutY="14.0" prefHeight="25.0"
+                                           prefWidth="431.0"/>
+                                <Button fx:id="btnAddFood" layoutX="19.0" layoutY="58.0" mnemonicParsing="false"
+                                        onAction="#btnAddFoodPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Add food"/>
+                                <Button fx:id="btnEditFood" layoutX="129.0" layoutY="58.0" mnemonicParsing="false"
+                                        onAction="#btnEditFoodPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Edit food"/>
+                                <Button fx:id="btnRemoveFood" layoutX="239.0" layoutY="58.0" mnemonicParsing="false"
+                                        onAction="#btnRemoveFoodPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Remove food"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Ingredients">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="lwIngredients" layoutX="19.0" layoutY="4.0" prefHeight="88.0"
+                                          prefWidth="430.0"/>
+                                <ChoiceBox fx:id="chbIngredients" layoutX="19.0" layoutY="103.0" prefHeight="25.0"
+                                           prefWidth="320.0"/>
+                                <Button fx:id="btnAddToRec" layoutX="349.0" layoutY="103.0" mnemonicParsing="false"
+                                        onAction="#btnAddToRecPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Add to recipe"/>
+                                <Button fx:id="btnDelFromRec" layoutX="349.0" layoutY="141.0" mnemonicParsing="false"
+                                        onAction="#btnDelFromRecPressed" prefHeight="25.0" prefWidth="100.0"
+                                        text="Del from recipe"/>
+                                <Button fx:id="btnAddIngredient" disable="true" layoutX="19.0" layoutY="141.0"
+                                        mnemonicParsing="false" onAction="#btnAddIngredientPressed" prefHeight="25.0"
+                                        prefWidth="100.0" text="Add Ingredient"/>
+                                <Label layoutX="130.0" layoutY="145.0" text="Amount:"/>
+                                <TextField fx:id="txtAmount" layoutX="190.0" layoutY="141.0" prefHeight="25.0"
+                                           prefWidth="100.0"/>
+                                <Label fx:id="lblUnit" layoutX="296.0" layoutY="145.0" text="kg"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Description">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="txtDesc" layoutX="19.0" prefHeight="176.0" prefWidth="430.0"
+                                          AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="19.0"
+                                          AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="5.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </TabPane>
+        <Line endX="430.0">
+            <VBox.margin>
+                <Insets left="19.0" right="19.0"/>
+            </VBox.margin>
+            <stroke>
+                <LinearGradient>
+                    <stops>
+                        <Stop color="WHITE"/>
+                        <Stop color="WHITE" offset="0.007662835249042145"/>
+                        <Stop color="BLACK" offset="0.5057471264367814"/>
+                        <Stop color="WHITE" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </stroke>
+        </Line>
+        <HBox prefHeight="42.0" prefWidth="474.0" spacing="10.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </VBox.margin>
+            <children>
+                <Button fx:id="btnBack" mnemonicParsing="false" onAction="#btnBackPressed" prefWidth="100.0"
+                        text="Back"/>
+                <Button fx:id="btnPrevious" mnemonicParsing="false" onAction="#btnPreviousPressed" prefWidth="100.0"
+                        text="Previous"/>
+                <Button fx:id="btnNext" mnemonicParsing="false" onAction="#btnNextPressed" prefWidth="100.0"
+                        text="Next"/>
+                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSavePressed" prefWidth="100.0"
+                        text="Save"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

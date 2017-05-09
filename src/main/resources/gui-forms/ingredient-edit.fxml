@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="285.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8.0.111"
+            fx:controller="com.cvut.fel.horovtom.presentation.IngredientEditController">
+    <Pane layoutX="30.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+          minWidth="-Infinity" prefHeight="257.0" prefWidth="455.0" AnchorPane.bottomAnchor="19.0"
+          AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <Label layoutX="20.0" layoutY="15.0" text="Name:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <TextField fx:id="txtName" layoutX="130.0" layoutY="15.0" onAction="#somethingChanged" prefHeight="25.0"
+                   prefWidth="305.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </TextField>
+        <Label layoutX="20.0" layoutY="55.0" text="Unit of measure:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <TextField fx:id="txtUnit" layoutX="130.0" layoutY="55.0" onAction="#somethingChanged" prefHeight="27.0"
+                   prefWidth="305.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </TextField>
+        <Label layoutX="20.0" layoutY="95.0" text="Price per Unit:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <TextField fx:id="txtPrice" alignment="TOP_LEFT" layoutX="130.0" layoutY="95.0"
+                   onAction="#somethingChanged" prefHeight="27.0" prefWidth="305.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <opaqueInsets>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </opaqueInsets>
+        </TextField>
+        <Label layoutX="20.0" layoutY="135.0" text="Amount:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <TextField fx:id="txtAmount" alignment="TOP_LEFT" layoutX="130.0" layoutY="135.0"
+                   onAction="#somethingChanged" prefHeight="27.0" prefWidth="197.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <opaqueInsets>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </opaqueInsets>
+        </TextField>
+        <Label fx:id="lblUnits" layoutX="341.0" layoutY="135.0" prefHeight="27.0" prefWidth="94.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <Label layoutX="20.0" layoutY="175.0" text="Expiration date:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+        <Button fx:id="btnSave" layoutX="350.0" layoutY="215.0" mnemonicParsing="false"
+                onAction="#btnSavePressed" prefHeight="27.0" prefWidth="85.0" text="Save">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+        <Button fx:id="btnBack" layoutX="20.0" layoutY="215.0" mnemonicParsing="false"
+                onAction="#btnBackPressed" prefHeight="27.0" prefWidth="85.0" text="Back">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+        <Button fx:id="btnPrevious" layoutX="130.0" layoutY="215.0" mnemonicParsing="false"
+                onAction="#btnPreviousPressed" prefHeight="27.0" prefWidth="85.0" text="Previous">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+        <Button fx:id="btnNext" layoutX="240.0" layoutY="215.0" mnemonicParsing="false"
+                onAction="#btnNextPressed" prefHeight="27.0" prefWidth="85.0" text="Next">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+        <DatePicker fx:id="dpExpiration" layoutX="130.0" layoutY="171.0" onAction="#somethingChanged"
+                    prefHeight="27.0" prefWidth="305.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </DatePicker>
+    </Pane>
+</AnchorPane>

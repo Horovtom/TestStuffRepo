@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<TabPane xmlns:fx="http://javafx.com/fxml/1" fx:id="tpMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="-Infinity" prefHeight="260.0" prefWidth="380.0" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/8.0.112-ea" fx:controller="com.cvut.fel.horovtom.presentation.MainController">
+    <Tab text="Recipes">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="176.0" prefWidth="380.0">
+            <ChoiceBox fx:id="chbRecipeList" layoutX="87.0" layoutY="116.0" prefHeight="25.0" prefWidth="280.0"/>
+            <Label layoutX="14.0" layoutY="120.0" text="Recipes:"/>
+            <Button fx:id="btnDisplayRec" layoutX="14.0" layoutY="156.0" mnemonicParsing="false"
+                    onAction="#btnDisplayRecPressed" prefHeight="25.0" prefWidth="108.0" text="Display recipe"/>
+            <Button fx:id="btnAddRec" layoutX="133.0" layoutY="156.0" mnemonicParsing="false"
+                    onAction="#btnAddRecPressed" prefHeight="25.0" prefWidth="109.0" text="Add new recipe"/>
+            <Button fx:id="btnCookFilter" layoutX="254.0" layoutY="156.0" mnemonicParsing="false"
+                    onAction="#btnCookFilterPressed" prefHeight="25.0" prefWidth="112.0" text="What can i cook?"/>
+            <ComboBox fx:id="cmbTypes" layoutX="102.0" layoutY="28.0" prefWidth="150.0"/>
+            <Label layoutX="12.0" layoutY="32.0" text="Type of food:"/>
+            <Button fx:id="btnFilterTypes" layoutX="264.0" layoutY="28.0" mnemonicParsing="false"
+                    onAction="#btnFilterTypesPressed" prefHeight="25.0" prefWidth="100.0" text="Filter types"/>
+            <ComboBox fx:id="cmbFoods" layoutX="102.0" layoutY="56.0" prefWidth="150.0"/>
+            <Label layoutX="12.0" layoutY="60.0" text="Food:"/>
+            <Button fx:id="btnFilterFoods" layoutX="264.0" layoutY="56.0" mnemonicParsing="false"
+                    onAction="#btnFilterFoodsPressed" prefHeight="25.0" prefWidth="99.0" text="Filter foods"/>
+            <Button fx:id="btnResetFilters" layoutX="264.0" layoutY="84.0" mnemonicParsing="false"
+                    onAction="#btnResetFiltersPressed" prefHeight="25.0" prefWidth="100.0" text="Reset filters"/>
+        </AnchorPane>
+    </Tab>
+    <Tab text="Fridge">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <ListView fx:id="lwIngredients" layoutX="23.0" layoutY="105.0" prefHeight="112.0" prefWidth="327.0"/>
+            <Button fx:id="btnAddIngredient" layoutX="23.0" layoutY="14.0" mnemonicParsing="false"
+                    onAction="#btnAddIngredientPressed" prefHeight="25.0" prefWidth="80.0" text="Add ingred."/>
+            <Button fx:id="btnEditIngredient" layoutX="23.0" layoutY="43.0" mnemonicParsing="false"
+                    onAction="#btnEditIngredientPressed" prefHeight="25.0" prefWidth="80.0" text="Edit ingred."/>
+            <Button fx:id="btnDeleteIngredient" layoutX="23.0" layoutY="72.0" mnemonicParsing="false"
+                    onAction="#btnDeleteIngredientPressed" prefHeight="25.0" prefWidth="80.0" text="Delete"/>
+            <Button fx:id="btnExpired" layoutX="270.0" layoutY="14.0" mnemonicParsing="false"
+                    onAction="#btnExpiredPressed" prefHeight="25.0" prefWidth="80.0" text="Expired"/>
+        </AnchorPane>
+    </Tab>
+</TabPane>
