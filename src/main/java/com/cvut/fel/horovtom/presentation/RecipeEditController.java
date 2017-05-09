@@ -176,7 +176,6 @@ public class RecipeEditController implements Initializable {
     }
     
     //endregion
-    
     //region Food tab
     
     /**
